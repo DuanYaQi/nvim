@@ -13,6 +13,7 @@ packer.startup({
 	 use("LinArcX/telescope-env.nvim") -- telescope extensions
 	 use("glepnir/dashboard-nvim") -- dashboard-nvim
    use("ahmedkhalf/project.nvim")
+	 use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }) -- nvim-treesitter
   end,
 config = {
     display = {
