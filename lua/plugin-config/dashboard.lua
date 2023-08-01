@@ -27,17 +27,48 @@ db.setup({
        [[]],
        [[]],
 	 },
+   --project = { enable = false, limit = 8, icon = 'your icon', label = '', action = 'Telescope find_files cwd=' }, 
+   packages = { enable = false },
+	 mru = { limit = 3 },
+   shortcut = {
+        { desc = '󰊳 init.lua', 
+				  group = '@property', 
+				  action = 'edit ~/.config/nvim/init.lua', 
+				  key = 'e' },
+        {
+          icon = ' ',
+          icon_hl = '@variable',
+          desc = 'Files',
+          group = 'Label',
+          action = 'Telescope find_files',
+          key = 'f',
+        },
+        {
+          desc = ' Projects',
+          group = 'DiagnosticHint',
+          action = 'Telescope projects',
+          key = 'a',
+        },
+        {
+          desc = ' Code',
+          group = 'Number',
+          action = 'Telescope live_grep',
+          key = 'p',
+        },
+    },
 
 	 center = {
-  {
+   {
     icon = "  ",
     desc = "Projects                            ",
     action = "Telescope projects",
+    key = "p",
   },
   {
     icon = "  ",
     desc = "Recently files                      ",
     action = "Telescope oldfiles",
+    key = "r",
   },
   {
     icon = "  ",

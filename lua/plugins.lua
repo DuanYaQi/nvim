@@ -11,9 +11,26 @@ packer.startup({
    use("arkav/lualine-lsp-progress")
 	 use({ 'nvim-telescope/telescope.nvim', requires = { "nvim-lua/plenary.nvim" } }) -- telescope
 	 use("LinArcX/telescope-env.nvim") -- telescope extensions
-	 use("glepnir/dashboard-nvim") -- dashboard-nvim
+	 use({"glepnir/dashboard-nvim", requires = 'nvim-tree/nvim-web-devicons'}) -- dashboard-nvim
    use("ahmedkhalf/project.nvim")
 	 use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }) -- nvim-treesitter
+   -- LSP --
+   use({ "williamboman/mason.nvim" })
+   use({ "williamboman/mason-lspconfig.nvim" })
+   use({ "neovim/nvim-lspconfig" })
+   -- 补全引擎 --
+   use("hrsh7th/nvim-cmp")
+   -- snippet 引擎
+   use("hrsh7th/vim-vsnip")
+   -- 补全源
+   use("hrsh7th/cmp-vsnip")
+   use("hrsh7th/cmp-nvim-lsp") -- { name = nvim_lsp }
+   use("hrsh7th/cmp-buffer") -- { name = 'buffer' },
+   use("hrsh7th/cmp-path") -- { name = 'path' }
+   use("hrsh7th/cmp-cmdline") -- { name = 'cmdline' }
+   -- 常见编程语言代码段
+   use("rafamadriz/friendly-snippets")
+
   end,
 config = {
     display = {
