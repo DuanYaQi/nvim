@@ -16,7 +16,7 @@ map("n", "sh", ":sp<CR>", opt)
 map("n", "sc", "<C-w>c", opt)
 -- 关闭其他
 map("n", "so", "<C-w>o", opt)
--- leader + hjkl  窗口之间跳转
+-- <leader> + hjkl  窗口之间跳转
 map("n", "<leader>h", "<C-w>h", opt) 
 map("n", "<leader>j", "<C-w>j", opt)
 map("n", "<leader>k", "<C-w>k", opt)
@@ -38,20 +38,20 @@ map("n", "s=", "<C-w>=", opt)
 
 
 -- Terminal相关
-map("n", "<leader>t", ":sp | terminal<CR>", opt)  -- 开终端，进一步按 i 进入终端模式
-map("n", "<leader>vt", ":vsp | terminal<CR>", opt)
-map("t", "<Esc>", "<C-\\><C-n>", opt)								-- del
-map("t", "<leader>h", [[ <C-\><C-N><C-w>h ]], opt) -- mac !!!
-map("t", "<leader>j", [[ <C-\><C-N><C-w>j ]], opt) -- mac !!!
-map("t", "<leader>k", [[ <C-\><C-N><C-w>k ]], opt) -- mac !!!
-map("t", "<leader>l", [[ <C-\><C-N><C-w>l ]], opt) -- mac !!!
+-- map("n", "<leader>t", ":sp | terminal<CR>", opt)  -- 开终端，进一步按 i 进入终端模式
+-- map("n", "<leader>vt", ":vsp | terminal<CR>", opt)
+-- map("t", "<Esc>", "<C-\\><C-n>", opt)								-- del
+-- map("t", "<leader>h", [[ <C-\><C-N><C-w>h ]], opt) -- mac !!!
+-- map("t", "<leader>j", [[ <C-\><C-N><C-w>j ]], opt) -- mac !!!
+-- map("t", "<leader>k", [[ <C-\><C-N><C-w>k ]], opt) -- mac !!!
+-- map("t", "<leader>l", [[ <C-\><C-N><C-w>l ]], opt) -- mac !!!
 
 
 
 
 -- visual模式下缩进代码
-map("v", "<", "<gv", opt)
-map("v", ">", ">gv", opt)
+-- map("v", "<", "<gv", opt)
+-- map("v", ">", ">gv", opt)
 -- 上下移动选中文本
 map("v", "J", ":move '>+1<CR>gv-gv", opt)
 map("v", "K", ":move '<-2<CR>gv-gv", opt)
@@ -82,33 +82,11 @@ map("n", "<C-e>", "<ESC>A", opt)
 
 
 
------------------------- plugin ------------------------
--- bufferline
--- 左右Tab切换
-map("n", "<C-h>", ":BufferLineCyclePrev<CR>", opt)
-map("n", "<C-l>", ":BufferLineCycleNext<CR>", opt)
--- 关闭
---"moll/vim-bbye"
-map("n", "<C-w>", ":Bdelete!<CR>", opt)
-map("n", "<leader>bl", ":BufferLineCloseRight<CR>", opt)
-map("n", "<leader>bh", ":BufferLineCloseLeft<CR>", opt)
-map("n", "<leader>bc", ":BufferLinePickClose<CR>", opt)
-
-
-
--- Telescope
--- 查找文件
-map("n", "<C-p>", ":Telescope find_files<CR>", opt)
--- 全局搜索
-map("n", "<C-f>", ":Telescope live_grep<CR>", opt)
-
-
-
--- 插件快捷键
+------------------------------ 插件快捷键 ------------------------------ 
 local pluginKeys = {}
 
--- nvim-tree
--- alt + m 键打开关闭tree
+---------------------- nvim-tree
+-- 空格 + m 键打开关闭tree
 map("n", "<leader>m", ":NvimTreeToggle<CR>", opt)
 -- 列表快捷键
 pluginKeys.nvimTreeList = {
@@ -129,9 +107,28 @@ pluginKeys.nvimTreeList = {
   { key = "c", action = "copy" },
   { key = "p", action = "paste" },
   { key = "s", action = "system_open" },
+--   { key = "TAB", action = "open_preview" }, -- 仅预览，focus 不变
 }
 
--- Telescope 列表中 插入模式快捷键
+---------------------- bufferline
+-- 左右Tab切换
+map("n", "<C-h>", ":BufferLineCyclePrev<CR>", opt)
+map("n", "<C-l>", ":BufferLineCycleNext<CR>", opt)
+-- 关闭
+--"moll/vim-bbye"
+map("n", "<C-w>", ":Bdelete!<CR>", opt)
+map("n", "<leader>bl", ":BufferLineCloseRight<CR>", opt)
+map("n", "<leader>bh", ":BufferLineCloseLeft<CR>", opt)
+map("n", "<leader>bc", ":BufferLinePickClose<CR>", opt)
+
+
+
+---------------------- Telescope 列表中 插入模式快捷键
+-- 查找文件
+map("n", "<C-p>", ":Telescope find_files<CR>", opt)
+-- 全局搜索
+map("n", "<C-f>", ":Telescope live_grep<CR>", opt)
+
 pluginKeys.telescopeList = {
   i = {
     -- 上下移动
@@ -150,7 +147,7 @@ pluginKeys.telescopeList = {
   },
 }
 
--- lsp 回调函数快捷键设置
+---------------------- lsp 回调函数快捷键设置
 pluginKeys.mapLSP = function(mapbuf)
   -- rename
   mapbuf("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opt)
@@ -177,13 +174,13 @@ pluginKeys.mapLSP = function(mapbuf)
 end
 
 
--- nvim-cmp 自动补全
+---------------------- nvim-cmp 自动补全
 pluginKeys.cmp = function(cmp)
     return {
         -- 出现补全
-        ["<A-.>"] = cmp.mapping(cmp.mapping.complete(), {"i", "c"}),
+        ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), {"i", "c"}),
         -- 取消
-        ["<A-,>"] = cmp.mapping({
+        ["<C-e>"] = cmp.mapping({
             i = cmp.mapping.abort(),
             c = cmp.mapping.close()
         }),

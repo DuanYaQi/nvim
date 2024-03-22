@@ -7,37 +7,38 @@ end
 
 lualine.setup({
   options = {
-    theme = "auto",
-    component_separators = { left = "|", right = "|" },
+    theme = "auto", -- 配色
+    component_separators = { left = "|", right = "|" }, -- 设置分段分隔符
     -- https://github.com/ryanoasis/powerline-extra-symbols
-    section_separators = { left = " ", right = "" },
+    section_separators = { left = " ", right = "" },  -- 设置分段中的组件分隔符
   },
   extensions = { "nvim-tree", "toggleterm" },
   sections = {
     lualine_c = {
-      "filename",
+    --   "filename",
       {
-        "lsp_progress",
-        spinner_symbols = { " ", " ", " ", " ", " ", " " },
+        "lsp_progress", -- 由我们之前安装的 arkav/lualine-lsp-progress 提供的
+        -- spinner_symbols = { '▙ ', '▛ ', '▜ ', '▟ ' },
+        spinner_symbols = { "⠇", "⠋", "⠙", "⠸", "⠴", "⠦" },
       },
     },
     lualine_x = {
       "filesize",
       {
-        "fileformat",
+        -- "fileformat",
         -- symbols = {
         --   unix = '', -- e712
         --   dos = '', -- e70f
         --   mac = '', -- e711
         -- },
-        symbols = {
-          unix = "LF",
-          dos = "CRLF",
-          mac = "CR",
-        },
+        -- symbols = {
+        --   unix = "LF",
+        --   dos = "CRLF",
+        --   mac = "CR",
+        -- },
       },
-      "encoding",
-      "filetype",
+    --   "encoding",
+    --   "filetype",
     },
   },
 })

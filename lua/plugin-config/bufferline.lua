@@ -8,7 +8,7 @@ end
 -- https://github.com/akinsho/bufferline.nvim#configuration
 bufferline.setup({
   options = {
-    -- 关闭 Tab 的命令，这里使用 moll/vim-bbye 的 :Bdelete 命令
+    -- 关闭 Tab 的命令，这里使用 moll/vim-bbye 的 :Bdelete 命令，不会搞乱布局
     close_command = "Bdelete! %d",
     right_mouse_command = "Bdelete! %d",
     -- 侧边栏配置
@@ -21,7 +21,7 @@ bufferline.setup({
         text_align = "left",
       },
     },
-    -- 使用 nvim 内置 LSP  后续课程会配置
+    -- 使用 nvim 内置 LSP
     diagnostics = "nvim_lsp",
     -- 可选，显示 LSP 报错图标
     ---@diagnostic disable-next-line: unused-local

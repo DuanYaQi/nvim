@@ -15,19 +15,19 @@ local function my_on_attach(bufnr)
   api.config.mappings.default_on_attach(bufnr)
   vim.keymap.set('n', '<CR>', api.node.open.edit, opts('Open'))
   vim.keymap.set('n', 'o', api.node.open.edit, opts('Open'))
-				vim.keymap.set('n', '<2-LeftMouse>', api.node.open.edit, opts('Open'))
-				vim.keymap.set('n', 'v', api.node.open.vertical, opts('Open: Vertical Split'))
-				vim.keymap.set('n', 'h', api.node.open.horizontal, opts('Open: Horizontal Split'))
-				vim.keymap.set('n', 'i', api.tree.toggle_custom_filter, opts('Toggle Hidden'))
-				vim.keymap.set('n', '.', api.tree.toggle_hidden_filter, opts('Toggle Dotfiles'))
-				vim.keymap.set('n', '<F5>', api.tree.reload, opts('Refresh'))
-				vim.keymap.set('n', 'a', api.fs.create, opts('Create'))
-				vim.keymap.set('n', 'd', api.fs.remove, opts('Delete'))
-				vim.keymap.set('n', 'r', api.fs.rename, opts('Rename'))
-				vim.keymap.set('n', 'x', api.fs.cut, opts('Cut'))
-				vim.keymap.set('n', 'c', api.fs.copy.node, opts('Copy'))
-				vim.keymap.set('n', 'p', api.fs.paste, opts('Paste'))
-				vim.keymap.set('n', 's', api.node.run.system, opts('Run System'))
+  vim.keymap.set('n', '<2-LeftMouse>', api.node.open.edit, opts('Open'))
+  vim.keymap.set('n', 'v', api.node.open.vertical, opts('Open: Vertical Split'))
+  vim.keymap.set('n', 'h', api.node.open.horizontal, opts('Open: Horizontal Split'))
+  vim.keymap.set('n', 'i', api.tree.toggle_custom_filter, opts('Toggle Hidden'))
+  vim.keymap.set('n', '.', api.tree.toggle_hidden_filter, opts('Toggle Dotfiles'))
+  vim.keymap.set('n', '<F5>', api.tree.reload, opts('Refresh'))
+  vim.keymap.set('n', 'a', api.fs.create, opts('Create'))
+  vim.keymap.set('n', 'd', api.fs.remove, opts('Delete'))
+  vim.keymap.set('n', 'r', api.fs.rename, opts('Rename'))
+  vim.keymap.set('n', 'x', api.fs.cut, opts('Cut'))
+  vim.keymap.set('n', 'c', api.fs.copy.node, opts('Copy'))
+  vim.keymap.set('n', 'p', api.fs.paste, opts('Paste'))
+  vim.keymap.set('n', 's', api.node.run.system, opts('Run System'))
 end
 
 
@@ -55,12 +55,7 @@ nvim_tree.setup({
         -- 也可以 'right'
         side = 'left',
         -- 隐藏根目录
-        hide_root_folder = false,
-        -- 自定义列表中快捷键
-        mappings = {
-            custom_only = false,
-            list = list_keys,
-        },
+        -- hide_root_folder = false,
         -- 不显示行数
         number = false,
         relativenumber = false,
@@ -75,13 +70,12 @@ nvim_tree.setup({
             quit_on_open = true,
         },
     },
-    -- wsl install -g wsl-open
-    -- https://github.com/4U6U57/wsl-open/
-    system_open = {
-        cmd = 'wsl-open', -- mac 直接设置为 open
-    },
 
-		on_attach = my_on_attach,
+    system_open = {
+        cmd = 'open', -- mac 直接设置为 open
+    },
+    -- 自定义列表中快捷键
+	-- on_attach = my_on_attach,
 })
 -- 自动关闭
 vim.cmd([[

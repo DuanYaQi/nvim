@@ -1,8 +1,8 @@
 -- 缩进2个空格等于一个Tab
-vim.o.tabstop = 2
-vim.bo.tabstop = 2
-vim.o.softtabstop = 2
-vim.o.shiftround = true
+-- vim.o.tabstop = 2
+-- vim.bo.tabstop = 2
+-- vim.o.softtabstop = 2
+-- vim.o.shiftround = true
 
 -- 设置 timeoutlen 为等待键盘快捷键连击时间500毫秒，可根据需要设置
 vim.o.timeoutlen = 500
@@ -29,5 +29,5 @@ vim.o.listchars = "space:·"
 -- 永远显示最上方的 tabline
 vim.o.showtabline = 2
 
--- 使用增强状态栏插件后不再需要 vim 的模式提示
+-- 使用增强状态栏插件 bufferline 后不再需要 vim 的模式提示
 vim.o.showmode = false
