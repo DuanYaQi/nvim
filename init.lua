@@ -21,6 +21,8 @@ require("plugin-config.project")
 require("plugin-config.nvim-treesitter") 
 require("plugin-config.symbols-outline")
 require("plugin-config.vim-floaterm")
+require("plugin-config.lazygit") -- Install lazygit first
+require("plugin-config.diffview")
 
 -- 内置LSP
 require("lsp.setup")

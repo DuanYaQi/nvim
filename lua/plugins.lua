@@ -21,7 +21,7 @@ packer.startup({
 
    -- 7. telescope 字符文件模糊搜索(fzf 替代品)
    use({ 'nvim-telescope/telescope.nvim', requires = { "nvim-lua/plenary.nvim" } })
-	 use("LinArcX/telescope-env.nvim") -- 环境变量插件
+     use("LinArcX/telescope-env.nvim") -- 环境变量插件
 
    -- 8. dashboard-nvim 启动面板
    use({"glepnir/dashboard-nvim", requires = 'nvim-tree/nvim-web-devicons'})
@@ -30,6 +30,14 @@ packer.startup({
    -- 9. nvim-treesitter 语法高亮
    use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
 
+   -- 10. lazygit git 插件
+   use({ "kdheepak/lazygit.nvim",
+    -- optional for floating window border decoration
+    requires = {"nvim-lua/plenary.nvim",},
+   })
+  
+   -- 11. diffview 插件
+   use("sindrets/diffview.nvim") 
 
    --------------------- LSP --------------------
    -- 语言服务器

@@ -109,6 +109,11 @@ _G.packer_plugins = {
     path = "/home/duanyaqi/.local/share/nvim/site/pack/packer/start/dashboard-nvim",
     url = "https://github.com/glepnir/dashboard-nvim"
   },
+  ["diffview.nvim"] = {
+    loaded = true,
+    path = "/home/duanyaqi/.local/share/nvim/site/pack/packer/start/diffview.nvim",
+    url = "https://github.com/sindrets/diffview.nvim"
+  },
   ["dracula.nvim"] = {
     loaded = true,
     path = "/home/duanyaqi/.local/share/nvim/site/pack/packer/start/dracula.nvim",
@@ -118,6 +123,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/duanyaqi/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
+  },
+  ["lazygit.nvim"] = {
+    loaded = true,
+    path = "/home/duanyaqi/.local/share/nvim/site/pack/packer/start/lazygit.nvim",
+    url = "https://github.com/kdheepak/lazygit.nvim"
   },
   ["lualine-lsp-progress"] = {
     loaded = true,

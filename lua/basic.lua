@@ -31,3 +31,14 @@ vim.o.showtabline = 2
 
 -- 使用增强状态栏插件 bufferline 后不再需要 vim 的模式提示
 vim.o.showmode = false
+
+-- 设置 .xpu 文件的文件类型为 C++
+--vim.cmd([[
+--  augroup xpu_filetype
+--    autocmd!
+--    autocmd BufNewFile,BufRead *.xpu set filetype=cpp
+--  augroup end
+--]])
+
+-- 配置 ctags 将 .xpu 文件视为 C++ 文件进行解析
+-- vim.api.nvim_command('!ctags --langmap=c++:+.xpu')
