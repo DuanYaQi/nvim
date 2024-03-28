@@ -107,7 +107,7 @@ pluginKeys.nvimTreeList = {
   { key = "c", action = "copy" },
   { key = "p", action = "paste" },
   { key = "s", action = "system_open" },
---   { key = "TAB", action = "open_preview" }, -- 仅预览，focus 不变
+  { key = "TAB", action = "open_preview" }, -- 仅预览，focus 不变
 }
 
 ---------------------- bufferline
@@ -191,9 +191,9 @@ end
 pluginKeys.cmp = function(cmp)
     return {
         -- 出现补全
-        ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), {"i", "c"}),
+        ["<A-.>"] = cmp.mapping(cmp.mapping.complete(), {"i", "c"}),
         -- 取消
-        ["<C-e>"] = cmp.mapping({
+        ["<A-,>"] = cmp.mapping({
             i = cmp.mapping.abort(),
             c = cmp.mapping.close()
         }),
@@ -211,5 +211,6 @@ pluginKeys.cmp = function(cmp)
         ["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(4), {"i", "c"}),
     }
 end
+
 
 return pluginKeys

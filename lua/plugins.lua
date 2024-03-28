@@ -51,7 +51,7 @@ packer.startup({
    -- 补全引擎插件
    use("hrsh7th/nvim-cmp")
    -- snippet 引擎
-   use("hrsh7th/vim-vsnip")
+   use("hrsh7th/vim-vsnip") -- 自定义代码段
    -- 补全源
    use("hrsh7th/cmp-vsnip")
    use("hrsh7th/cmp-nvim-lsp") -- { name = nvim_lsp }   Neovim 内置 LSP 提供的补全内容

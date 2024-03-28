@@ -25,5 +25,5 @@ require("plugin-config.lazygit") -- Install lazygit first
 require("plugin-config.diffview") -- git version >=3.31.0
 
 -- 内置LSP
-require("lsp.setup")
-
+require("lsp.setup")   -- lsp 
+require("lsp.cmp")     -- 自动补全	

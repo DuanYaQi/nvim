@@ -32,9 +32,9 @@ db.setup({
 	 mru = { limit = 3 },
    shortcut = {
         { desc = '󰊳 init.lua', 
-				  group = '@property', 
-				  action = 'edit ~/.config/nvim/init.lua', 
-				  key = 'e' },
+	  group = '@property', 
+	  action = 'edit ~/.config/nvim/init.lua', 
+	  key = 'e' },
         {
           icon = ' ',
           icon_hl = '@variable',
