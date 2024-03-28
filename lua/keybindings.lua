@@ -37,7 +37,7 @@ map("n", "s=", "<C-w>=", opt)
 
 
 
--- Terminal相关  floaterm 平替
+-- Terminal相关  floaterm 全盘接管
 -- map("n", "<leader>t", ":sp | terminal<CR>", opt)  -- 开终端，进一步按 i 进入终端模式
 -- map("n", "<leader>vt", ":vsp | terminal<CR>", opt)
 -- map("t", "<Esc>", "<C-\\><C-n>", opt)								-- del
@@ -156,9 +156,10 @@ map("n", "gg", ":LazyGit<CR>", opt)
 
 
 ---------------------- floaterm
-map("n", "ftn", ":FloatermNew<CR>", opt)
+map("n", "ftn", ":FloatermNew --height=0.8<CR>", opt)
 map("t", "<ESC>", "<C-\\><C-n>:FloatermHide<CR>", opt)
-map("n", "fts", ":FloatermShow<CR>", opt)
+map("t", "<C-w>", "<C-\\><C-n>:FloatermKill<CR>", opt)
+map("n", "ft", ":FloatermShow<CR>", opt)
 
 
 ---------------------- lsp 回调函数快捷键设置
