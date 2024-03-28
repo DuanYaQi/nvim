@@ -171,3 +171,8 @@ Neovim 与 VSCode 相同内置了一套 Language Client 端的实现，这样我
 ## Cmp
 
 补全引擎
+
+
+## indent-blankline
+
+不需要魔法括号线，在待取消的文件内时输入 :echo &filetype 回车，状态栏会输出该文件的类型，加入 filetype_exclude 变量中排除

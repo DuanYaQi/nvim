@@ -173,7 +173,7 @@ pluginKeys.mapLSP = function(mapbuf)
   mapbuf("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opt)
   mapbuf("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opt)
   -- diagnostic
-  mapbuf("n", "gp", "<cmd>lua vim.diagnostic.open_float()<CR>", opt)
+  mapbuf("n", "gp", "<cmd>lua vim.diagnostic.open_float()<CR>", opt) -- 以弹窗的方式显示改行提示
   mapbuf("n", "gk", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opt)
   mapbuf("n", "gj", "<cmd>lua vim.diagnostic.goto_next()<CR>", opt)
   mapbuf("n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opt)
@@ -189,6 +189,15 @@ end
 
 ---------------------- nvim-cmp 自动补全
 pluginKeys.cmp = function(cmp)
+    local feedkey = function(key, mode)
+      vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), mode, true)
+    end
+
+    local has_words_before = function()
+      local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+      return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+    end
+
     return {
         -- 出现补全
         ["<A-.>"] = cmp.mapping(cmp.mapping.complete(), {"i", "c"}),
@@ -209,6 +218,28 @@ pluginKeys.cmp = function(cmp)
         -- 如果窗口内容太多，可以滚动
         ["<C-u>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), {"i", "c"}),
         ["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(4), {"i", "c"}),
+        
+	-- Super Tab
+    ["<Tab>"] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_next_item()
+      elseif vim.fn["vsnip#available"](1) == 1 then
+        feedkey("<Plug>(vsnip-expand-or-jump)", "")
+      elseif has_words_before() then
+        cmp.complete()
+      else
+        fallback() -- The fallback function sends a already mapped key. In this case, it's probably `<Tab>`.
+      end
+    end, {"i", "s"}),
+
+    ["<S-Tab>"] = cmp.mapping(function()
+      if cmp.visible() then
+        cmp.select_prev_item()
+      elseif vim.fn["vsnip#jumpable"](-1) == 1 then
+        feedkey("<Plug>(vsnip-jump-prev)", "")
+      end
+    end, {"i", "s"})
+    -- end of super Tab
     }
 end
 

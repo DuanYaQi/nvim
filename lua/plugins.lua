@@ -38,6 +38,9 @@ packer.startup({
   
    -- 11. diffview 插件
    use("sindrets/diffview.nvim") 
+  
+   -- 12. indent-blankline 魔法括号线
+   use("lukas-reineke/indent-blankline.nvim")
 
    --------------------- LSP --------------------
    -- 语言服务器
