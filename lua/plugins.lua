@@ -49,6 +49,9 @@ packer.startup({
 
    -- 配置 LSP Server
    use({ "neovim/nvim-lspconfig" })
+   
+   -----------------  格式化 --------------------
+   use({ "jose-elias-alvarez/null-ls.nvim", requires = "nvim-lua/plenary.nvim" }) -- language Server 的方式
 
    -------------------- 补全引擎 ------------------
    -- 补全引擎插件

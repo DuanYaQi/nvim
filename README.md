@@ -163,14 +163,31 @@ Neovim 与 VSCode 相同内置了一套 Language Client 端的实现，这样我
 
 4. `:lua print(vim.inspect(vim.lsp.buf_get_clients()))` 查看 LSP 连接状态
 
+
+
+lua-language-server
+
+安装 lua 和 luarocks：https://github.com/luarocks/luarocks/wiki/Installation-instructions-for-Unix
+
+ wget http://www.lua.org/ftp/lua-5.3.6.tar.gz
+
+ wget https://luarocks.github.io/luarocks/releases/luarocks-3.11.0.tar.gz
+
+
 ### mason
 
 :Mason 管理
 
 
-## Cmp
+### Cmp
 
 补全引擎
+
+
+### format
+
+- 使用专门的格式化插件
+- 给 Language Server 注入格式化功能
 
 
 ## indent-blankline

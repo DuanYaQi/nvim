@@ -27,4 +27,9 @@ require("plugin-config.indent-blankline")
 
 -- 内置LSP
 require("lsp.setup")   -- lsp 
-require("lsp.cmp")     -- 自动补全	
+
+
+require("cmp.cmp")     -- 自动补全	
+
+-- require("format.null-ls") -- TODO: 打开代码格式化
+

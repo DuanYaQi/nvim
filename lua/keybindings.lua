@@ -1,5 +1,5 @@
 -- set space as leader
-vim.g.mapleader = " "
+  vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 local map = vim.api.nvim_set_keymap
@@ -157,7 +157,8 @@ map("n", "gg", ":LazyGit<CR>", opt)
 
 ---------------------- floaterm
 map("n", "ftn", ":FloatermNew<CR>", opt)
-map("n", "fth", ":FloatermHide<CR>", opt)
+map("t", "<ESC>", "<C-\\><C-n>:FloatermHide<CR>", opt)
+map("n", "fts", ":FloatermShow<CR>", opt)
 
 
 ---------------------- lsp 回调函数快捷键设置
