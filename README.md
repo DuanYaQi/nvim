@@ -6,9 +6,9 @@
 
 `<CR>` 回车
 
-`<A-k>` alt + k
+`<A-k>` alt(option) + k
 
-
+Item2 设置方式为 Preference -> Profiles -> Default --> Keys --> Left Option key --> 选中 Esc+
 
 - lua/
     - lsp/: 对 Neovim 内置 LSP 功能的配置，包括常见编程语言与语法提示等

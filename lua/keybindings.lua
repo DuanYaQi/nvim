@@ -37,7 +37,7 @@ map("n", "s=", "<C-w>=", opt)
 
 
 
--- Terminal相关
+-- Terminal相关  floaterm 平替
 -- map("n", "<leader>t", ":sp | terminal<CR>", opt)  -- 开终端，进一步按 i 进入终端模式
 -- map("n", "<leader>vt", ":vsp | terminal<CR>", opt)
 -- map("t", "<Esc>", "<C-\\><C-n>", opt)								-- del
