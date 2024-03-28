@@ -1,8 +1,11 @@
 # 目录结构
 
 `<leader>` 空格
+
 `<C-Left>` control + 左方向
+
 `<CR>` 回车
+
 `<A-k>` alt + k
 
 
@@ -138,6 +141,14 @@ https://github.com/nvim-treesitter/nvim-treesitter#i-get-query-error-invalid-nod
 执行 `:echo nvim_get_runtime_file('parser', v:true)`
 
 然后把除 nvim-treesitter 之外的路径下的 parser 删除
+
+['/home/duanyaqi/.local/share/nvim/site/pack/packer/start/nvim-treesitter/parser', '/home/duanyaqi/.local/usr/local/lib/nvim/parser']
+
+## lazygit
+
+安装 lazygit
+
+https://github.com/jesseduffield/lazygit
 
 ## LSP
 

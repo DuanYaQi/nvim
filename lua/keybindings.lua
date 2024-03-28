@@ -147,6 +147,19 @@ pluginKeys.telescopeList = {
   },
 }
 
+
+
+
+---------------------- Lazygit
+map("n", "gg", ":LazyGit<CR>", opt)
+
+
+
+---------------------- floaterm
+map("n", "ftn", ":FloatermNew<CR>", opt)
+map("n", "fth", ":FloatermHide<CR>", opt)
+
+
 ---------------------- lsp 回调函数快捷键设置
 pluginKeys.mapLSP = function(mapbuf)
   -- rename
